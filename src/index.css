@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom continuous animations for the Carbon Pulse orb */
+@keyframes orb-glow-green {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(116, 198, 157, 0.4)) drop-shadow(0 0 30px rgba(116, 198, 157, 0.2));
+  }
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 25px rgba(82, 183, 136, 0.7)) drop-shadow(0 0 45px rgba(82, 183, 136, 0.4));
+  }
+}
+
+@keyframes orb-glow-amber {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.4)) drop-shadow(0 0 30px rgba(245, 158, 11, 0.2));
+  }
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.7)) drop-shadow(0 0 45px rgba(245, 158, 11, 0.4));
+  }
+}
+
+@keyframes orb-glow-red {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.4)) drop-shadow(0 0 30px rgba(239, 68, 68, 0.2));
+  }
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.7)) drop-shadow(0 0 45px rgba(239, 68, 68, 0.4));
+  }
+}
+
+.animate-pulse-green {
+  animation: orb-glow-green 4s infinite ease-in-out;
+}
+
+.animate-pulse-amber {
+  animation: orb-glow-amber 4s infinite ease-in-out;
+}
+
+.animate-pulse-red {
+  animation: orb-glow-red 4s infinite ease-in-out;
+}
+
+/* Beautiful custom animations for alert nodes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s infinite ease-in-out;
+}
+
+body {
+  background-color: #F2F5F0;
+  color: #1B4332;
+}
+
+/* Bento custom styles to be used across components */
+.bento-grid-card {
+  background-color: white;
+  border: 1px solid #E1EAD8;
+  border-radius: 2rem;
+  color: #1B4332;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-grid-card-dark {
+  background-color: #1B4332;
+  border-radius: 2rem;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-grid-card-accent {
+  background-color: #D8F3DC;
+  border-radius: 2rem;
+  color: #1B4332;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-grid-card-medium {
+  background-color: #74C69D;
+  border-radius: 2rem;
+  color: #1B4332;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
