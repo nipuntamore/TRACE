@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { QuizProfile } from '../types';
 import { Leaf, Navigation, Utensils, Zap, Plane, Trash2, ArrowRight, ArrowLeft, Sparkles } from 'lucide-react';
+import TraceLogo from './TraceLogo';
 
 interface QuizProps {
   onComplete: (profile: QuizProfile) => void;
@@ -309,7 +310,8 @@ export default function Quiz({ onComplete }: QuizProps) {
 
   return (
     <div className="max-w-2xl mx-auto py-8 px-4" id="onboarding-quiz">
-      <div className="text-center mb-10">
+      <div className="flex flex-col items-center text-center mb-10">
+        <TraceLogo size="lg" className="mb-6" />
         <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#D8F3DC] text-[#1B4332] text-xs font-black rounded-full mb-3 tracking-wide uppercase">
           <Leaf className="w-3 h-3 text-[#2D6A4F] fill-[#D8F3DC]" /> TRACE Eco-Onboarding
         </div>

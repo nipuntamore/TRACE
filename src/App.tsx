@@ -14,6 +14,7 @@ import ActionHub from './components/ActionHub';
 import Insights from './components/Insights';
 import EcoCoach from './components/EcoCoach';
 import NotificationDrawer from './components/NotificationDrawer';
+import TraceLogo from './components/TraceLogo';
 
 import { 
   Leaf, 
@@ -151,6 +152,10 @@ export default function App() {
   const handleOnboardingComplete = (quizAnswers: QuizProfile) => {
     setProfile(quizAnswers);
     localStorage.setItem('trace_profile_info', JSON.stringify(quizAnswers));
+    
+    // Clear prepopulated mock logs so Trends & Impact start new after onboarding
+    setCarbonLogs([]);
+    localStorage.setItem('trace_carbon_logs', JSON.stringify([]));
     
     // Unlock eco-pioneer achievement
     unlockAward('pioneer', "Pioneer Badge Unlocked: Created your personalized climate profile!");
@@ -427,17 +432,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           
           {/* Logo element */}
-          <div className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-[#2D6A4F] text-white rounded-xl shadow-sm flex items-center justify-center font-bold text-lg font-display">
-              T
-            </div>
-            <div>
-              <h1 className="text-xl font-display font-black text-[#1B4332] tracking-tight leading-none">TRACE</h1>
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#40916C] block pl-0.5 font-bold">
-                Tracking & Real-time Awareness of Carbon Emissions
-              </span>
-            </div>
-          </div>
+          <TraceLogo />
 
           {/* Collectives Passive statistics row metrics */}
           <div className="flex items-center gap-4 justify-between sm:justify-end">
