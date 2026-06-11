@@ -1,1 +1,7 @@
-"import { describe, it, expect } from 'vitest'; describe('TRACE Setup', () => { it('sanity check', () => { expect(1 + 1).toBe(2); }); });" 
+import { describe, it, expect } from 'vitest';
+
+describe('TRACE Setup', () => {
+  it('sanity check', () => {
+    expect(1 + 1).toBe(2);
+  });
+});
